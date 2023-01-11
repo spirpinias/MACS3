@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+git clone https://github.com/zappuf/aux_tools.git
+cd aux_tools/
+git checkout 67a69fdbefacfea23b67caace6cd02b8029aa710
+chmod +x get_*
+ln -s $PWD/get_*.py /usr/local/bin

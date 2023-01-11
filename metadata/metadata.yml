@@ -1,0 +1,10 @@
+metadata_version: 1
+name: MACS3-PeakCalling
+description: a tool used in the analysis of chip-seq.
+tags:
+- Bioinformatics
+- Peak Calling
+- ChIP
+- ATAC
+authors:
+- name: Stephen Pirpinias
