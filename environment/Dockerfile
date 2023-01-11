@@ -1,4 +1,4 @@
-# hash:sha256:08302b90ec591a6ae3b4c315af814ae1ba6d7beeddca9a445c6be267831b5048
+# hash:sha256:66bb9dc4a463eb15619af94f8ede7d4fb38572b16485ce87b38be61c799f22ab
 FROM registry.apps.codeocean.com/codeocean/jupyterlab:3.4.4-miniconda4.12.0-python3.9-ubuntu20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -12,11 +12,8 @@ RUN apt-get update \
         build-essential \
         gcc \
         python-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN conda install -y \
         python3-dev \
-    && conda clean -ya
+    && rm -rf /var/lib/apt/lists/*
 
 RUN pip install -U --no-cache-dir \
     macs3 \
