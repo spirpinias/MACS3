@@ -32,7 +32,7 @@ then
 
             case_file=$(find -L ../data -name "${case}"_Rep?.bam)
             
-            macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}_vs_${case}" --outdir ../results/"${control}_vs_${case}" --qvalue ${q_val} --nomodel --extsize 147        
+            macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}_vs_${case}" --outdir ../results/"${control}_vs_${case}" --qvalue ${q_val}        
         done        
     else
         echo "Sample Sheet was Empty!"
