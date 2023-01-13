@@ -28,9 +28,9 @@ then
             control=$(echo $line | awk -F, '{print $1}')
             case=$(echo $line | awk -F, '{print $2}')
 
-            control_file=$(find -L ../data -name "${control}"_Rep?.bam)
+            control_file=$(find -L ../data -name "${control}"_[R|r]ep?.bam)
 
-            case_file=$(find -L ../data -name "${case}"_Rep?.bam)
+            case_file=$(find -L ../data -name "${case}"_[R|r]ep?.bam)
             
             macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}_vs_${case}" --outdir ../results/"${control}_vs_${case}" --qvalue ${q_val} --extsize 147 --nomodel      
         done        
