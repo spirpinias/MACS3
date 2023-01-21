@@ -5,6 +5,7 @@ source ./utils.sh
 
 # Search for the Bam Files
 bam_count=$(find -L ../data -name "*.bam" | wc -l)
+bam_files=$(find -L ../data -name "*.bam")
 
 # Compare Sheet
 compare_sheet=$(find -L ../data -name "*compare_sheet.csv")
@@ -28,15 +29,24 @@ then
             control=$(echo $line | awk -F, '{print $1}')
             case=$(echo $line | awk -F, '{print $2}')
 
-            control_file=$(find -L ../data -name "${control}"_*ep?.bam)
+            control_file=$(find -L ../data -name "*.bam" | grep -i ''${control}'')
+            case_file=$(find -L ../data -name "*.bam" | grep -i ''${case}'')
 
-            case_file=$(find -L ../data -name "${case}"_*ep?.bam)
-            
-            macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}_vs_${case}" --outdir ../results/"${control}_vs_${case}" --qvalue ${q_val} --extsize 147 --nomodel      
+            macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}vs${case}" --outdir ../results/"${control}vs${case}" --qvalue ${q_val} --nomodel --extsize 147        
         done        
     else
         echo "Sample Sheet was Empty!"
     fi
 else
-    echo "No Sample Sheet was Found!"
+    if [ "$bam_count" -gt 0 ];
+    then
+        echo "No Comparison were Found! Assuming no Controls.."
+        condGroup=$(echo $bam_files| xargs basename -a | sed 's/_[^_]*$//g' | uniq)
+        for line in ${condGroup};
+        do 
+            echo "${line} is being Processed"
+            no_control=$(find -L ../data -name "*.bam" | grep -i ''${line}'')
+            macs3 callpeak -t ${no_control} -f ${format} -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val} --nomodel --extsize 147    
+        done
+    fi
 fi
