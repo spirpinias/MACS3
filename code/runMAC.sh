@@ -10,7 +10,7 @@ bam_files=$(find -L ../data -name "*.bam")
 # Compare Sheet
 compare_sheet=$(find -L ../data -name "*compare_sheet.csv")
 compare_sheet_count=$(find -L ../data -name "*compare_sheet.csv" | wc -l)
-delim_compare_count=$(cat $compare_sheet | grep -o "," | wc -l)
+delim_compare_count=$(cat $compare_sheet | grep -c ",")
 
 if [ "$compare_sheet_count" -eq 1 ]; 
 then
