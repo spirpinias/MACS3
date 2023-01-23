@@ -41,7 +41,7 @@ else
     if [ "$bam_count" -gt 0 ];
     then
         echo "No Comparison were Found! Assuming no Controls.."
-        condGroup=$(echo $bam_files| xargs basename -a | sed 's/_[^_]*$//g' | sort| uniq)
+        condGroup=$(echo $bam_files| xargs basename -a | sed 's/_[^_]*$//g' | sort | uniq)
         for line in ${condGroup};
         do 
             echo "${line} is being Processed"
