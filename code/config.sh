@@ -30,9 +30,3 @@ if [ -z "${3}" ]; then
 else
     q_val="${3}"
 fi
-
-if [ -z "${4}" ]; then
-    ext_size="147"
-else
-    ext_size="${4}"
-fi
