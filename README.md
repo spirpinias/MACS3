@@ -41,7 +41,7 @@ dm: 1.2e8
 
 ## Usage
 
-When supplied with alignment file and compare sheet. This tool will perform peak calling with comparisons. 
+When supplied with alignment files and compare sheet. This tool will perform peak calling with comparisons. 
 
 If your alignments are from PAIRED-END data you MUST select BAMPE or BEDPE to alert MACS that you are working with paired end data, respectively.
 
