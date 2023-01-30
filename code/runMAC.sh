@@ -38,7 +38,7 @@ then
             echo "Number of Control Files Found : ${control_count}"
             echo "Number of Case Files Found : ${case_count}" 
 
-            macs3 callpeak -t ${case_file} -c ${control_file} -f BAM -g "${genome}" -n "${control}vs${case}" --outdir ../results/"${control}vs${case}" --qvalue ${q_val} --nomodel --extsize ${ext_size}        
+            macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}vs${case}" --outdir ../results/"${control}vs${case}" --qvalue ${q_val} --nomodel --extsize ${ext_size}        
         done        
     else
         echo "Compare Sheet was Empty!"
@@ -52,7 +52,7 @@ else
         do 
             echo "${line} is being Processed"
             no_control=$(find -L ../data -name "*.bam" | grep -i ''${line}'')
-            macs3 callpeak -t ${no_control} -f BAM -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val} --nomodel --extsize ${ext_size}    
+            macs3 callpeak -t ${no_control} -f ${format} -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val} --nomodel --extsize ${ext_size}    
         done
     fi
 fi
