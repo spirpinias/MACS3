@@ -59,7 +59,7 @@ or no comparisons.
 Chip = Mixture of .bed and .bam formatted files.
 
 (Tentatively removing this line).
-You can make choice of popular genomes depending on your projects species, q value, and extension size, if desired. 
+You can make choice of popular genomes depending on your projects species and q value threshold, if desired. 
 
 
 ## Output
