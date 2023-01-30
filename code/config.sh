@@ -20,19 +20,13 @@ else
 fi
 
 if [ -z "${2}" ]; then
-    format="AUTO"
+    q_val="0.05"
 else
-    format="${2}"
+    q_val="${2}"
 fi
 
 if [ -z "${3}" ]; then
-    q_val="0.05"
-else
-    q_val="${3}"
-fi
-
-if [ -z "${4}" ]; then
     ext_size="147"
 else
-    ext_size="${4}"
+    ext_size="${3}"
 fi
