@@ -32,8 +32,8 @@ then
             control_file=$(find -L ../data -name "*.bam" | grep -i ''${control}'')
             case_file=$(find -L ../data -name "*.bam" | grep -i ''${case}'')
 
-            control_count=$(find -L ../data -name "*.bam" | grep -ci ''${control}'')
-            case_count=$(find -L ../data -name "*.bam" | grep -ci ''${case}'')
+            control_count=$(echo $control_file | wc -l)
+            case_count=$(echo $case_file | wc -l)
 
             echo "Number of Control Files Found : ${control_count}"
             echo "Number of Case Files Found : ${case_count}" 
