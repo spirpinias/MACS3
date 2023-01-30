@@ -3,9 +3,11 @@
 source ./config.sh
 source ./utils.sh
 
-# Search for the Bam Files
-bam_count=$(find -L ../data -name "*.bam" | wc -l)
-bam_files=$(find -L ../data -name "*.bam")
+# Search for the Alignment Files
+bam_count=$(find -L ../data -name "*.bed" -o -name "*.bam" -o -name "*.sam" | wc -l)
+bam_files=$(find -L ../data -name "*.bed" -o -name "*.bam" -o -name "*.sam" )
+
+
 
 # Compare Sheet
 compare_sheet=$(find -L ../data -name "*compare_sheet.csv")
