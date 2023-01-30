@@ -29,8 +29,8 @@ then
             control=$(echo $line | awk -F, '{print $1}')
             case=$(echo $line | awk -F, '{print $2}')
 
-            control_file=$(find -L ../data -name "*.bam*" | grep -i ''${control}'')
-            case_file=$(find -L ../data -name "*.bam*" | grep -i ''${case}'')
+            control_file=$(find -L ../data -name "*.bam" | grep -i ''${control}'')
+            case_file=$(find -L ../data -name "*.bam" | grep -i ''${case}'')
 
             control_count=$(echo $control_file | wc -w)
             case_count=$(echo $case_file | wc -w)
