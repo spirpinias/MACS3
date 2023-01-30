@@ -23,13 +23,6 @@ sampleA_Rep2
 sampleA_Rep3
 sampleA_Rep4
 
-or
-
-sampleA_Batch1
-sampleA_Batch2
-sampleA_Batch3
-sampleA_Batch4
-
 We are assuming the final "_ " precedes a replicate marker ending with integer.
 
 ## Parameters 
