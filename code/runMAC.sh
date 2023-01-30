@@ -15,12 +15,12 @@ delim_compare_count=$(cat $compare_sheet | grep -c ",")
 if [ "$compare_sheet_count" -eq 1 ]; 
 then
 
-    echo "Compare Sheet were Found!"
+    echo "Compare Sheet Found!"
     
     if [ "$delim_compare_count" -gt 0 ] ;
     then
         
-        echo "Compare Sheet Look Good!"
+        echo "Compare Sheet Contains Comparisons!"
 
         for line in $(cat ${compare_sheet}); 
         do
@@ -31,6 +31,12 @@ then
 
             control_file=$(find -L ../data -name "*.bam" | grep -i ''${control}'')
             case_file=$(find -L ../data -name "*.bam" | grep -i ''${case}'')
+
+            control_count=$(echo $control_files | wc -l)
+            case_count=$(echo $case_files | wc -l)
+
+            echo "Number of Control Files Found : ${control_count}"
+            echo "Number of Case Files Found : ${case_count}" 
 
             macs3 callpeak -t ${case_file} -c ${control_file} -f BAM -g "${genome}" -n "${control}vs${case}" --outdir ../results/"${control}vs${case}" --qvalue ${q_val} --nomodel --extsize ${ext_size}        
         done        
