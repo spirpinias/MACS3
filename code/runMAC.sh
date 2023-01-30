@@ -52,7 +52,7 @@ else
         for line in ${condGroup};
         do 
             echo "${line} is being Processed"
-            no_control=$(find -L ../data -name "*.bam" | grep -i ''${line}'')
+            no_control=$(echo $bam_files | tr ' ' '\n' | grep -i ''${line}'')
             macs3 callpeak -t ${no_control} -f ${format} -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val} --nomodel --extsize ${ext_size}    
         done
     fi
