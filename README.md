@@ -7,7 +7,7 @@ MACS3 is a peak calling tool for ChIP seq data to identify transcript factor bin
 
 - Searches your data folder for the files in aforementioned format.
 - Searches your data folder for a compare file in .csv format. 
-- Compare format MUST like so - control,case.
+- Compare format MUST be like so - control,case.
 - Use file prefix to identify case and control samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
 - Each line in compare file will have paired case and control bams, i.e.,
 “hypoxia_control,hypoxia_test” 
