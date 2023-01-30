@@ -64,7 +64,7 @@ You can make choice of popular genomes depending on your projects species and q 
 
 ## Output
 
-In your results folder you will find a directory holding .narrowPeak, peaks.xls, and .bed files describing the peaks and locations founding on your genome during analysis. 
+In your results folder you will find a directory holding .narrowPeak, peaks.xls, .bed files, and R model (if no peaks are found this model will not be available. You will produce an error instructing you how to proceed) describing the peaks and locations found on your genome during analysis. 
 
 ## Source
 
