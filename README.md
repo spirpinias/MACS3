@@ -13,6 +13,7 @@ MACS3 is a peak calling tool for ChIP seq data to identify transcript factor bin
 “hypoxia_control,hypoxia_test” 
 - If you do not provide a compare file, the tool assumes all provided files are ChIP data with no comparisons or controls.
 
+
 ## Naming Convention
 
 This capsule requests you name your alignment files in a specific format. 
@@ -41,7 +42,7 @@ dm: 1.2e8
 
 ## Usage
 
-When supplied with alignement file in .bam format and compare sheet. This tool will perform peak calling with or without comparisons. From the App Panel you can make choice of popular genomes depending on your projects species, auto detection of file formats, q value, and extension size, if desired. 
+When supplied with alignment file in and compare sheet. This tool will perform peak calling with or without comparisons. From the App Panel you can make choice of popular genomes depending on your projects species, auto detection of file formats, q value, and extension size, if desired. 
 
 Please take note! This capsule is specifically working with bam files, only.
 
