@@ -41,12 +41,12 @@ then
             macs3 callpeak -t ${case_file} -c ${control_file} -f BAM -g "${genome}" -n "${control}vs${case}" --outdir ../results/"${control}vs${case}" --qvalue ${q_val} --nomodel --extsize ${ext_size}        
         done        
     else
-        echo "Sample Sheet was Empty!"
+        echo "Compare Sheet was Empty!"
     fi
 else
     if [ "$bam_count" -gt 0 ];
     then
-        echo "No Comparison were Found! Assuming no Controls.."
+        echo "No Comparison File Found! Assuming only ChIP Seq data only"
         condGroup=$(echo $bam_files| xargs basename -a | sed 's/_[^_]*$//g' | sort | uniq)
         for line in ${condGroup};
         do 
