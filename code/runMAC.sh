@@ -25,7 +25,6 @@ then
         for line in $(cat ${compare_sheet}); 
         do
 
-
             # Get Control and Case 
             control=$(echo $line | awk -F, '{print $1}')
             case=$(echo $line | awk -F, '{print $2}')
