@@ -25,7 +25,7 @@ then
         for line in $(cat ${compare_sheet}); 
         do
 
-            bam_files=$(echo $bam_files | tr ' ' '\n')
+            echo $bam_files
 
             # Get Control and Case 
             control=$(echo $line | awk -F, '{print $1}')
