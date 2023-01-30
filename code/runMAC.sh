@@ -4,10 +4,8 @@ source ./config.sh
 source ./utils.sh
 
 # Search for the Alignment Files
-bam_count=$(find -L ../data -name "*.bed" -o -name "*.bam" -o -name "*.sam" | wc -l)
-bam_files=$(find -L ../data -name "*.bed" -o -name "*.bam" -o -name "*.sam" )
-
-
+bam_count=$(find -L ../data -name "*.bed" -o -name "*.bam" | wc -l)
+bam_files=$(find -L ../data -name "*.bed" -o -name "*.bam")
 
 # Compare Sheet
 compare_sheet=$(find -L ../data -name "*compare_sheet.csv")
