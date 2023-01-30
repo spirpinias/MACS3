@@ -33,8 +33,8 @@ then
             control_file=$(echo $bam_files | tr ' ' '\n' | grep -i ''${control}'')
             case_file=$(echo $bam_files | tr ' ' '\n' | grep -i ''${case}'')
 
-            control_count=$(echo $control_file | wc -w)
-            case_count=$(echo $case_file | wc -w)
+            control_count=$(echo $control_file | wc -l)
+            case_count=$(echo $case_file | wc -l)
 
             echo "Number of Control Files Found : ${control_count}"
             echo "Number of Case Files Found : ${case_count}" 
