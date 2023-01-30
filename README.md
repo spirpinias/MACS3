@@ -42,9 +42,26 @@ dm: 1.2e8
 
 ## Usage
 
-When supplied with alignment file in and compare sheet. This tool will perform peak calling with or without comparisons. From the App Panel you can make choice of popular genomes depending on your projects species, auto detection of file formats, q value, and extension size, if desired. 
+When supplied with alignment file and compare sheet. This tool will perform peak calling with comparisons. 
 
-Please take note! This capsule is specifically working with bam files, only.
+If your alignments are from PAIRED-END data you MUST select BAMPE or BEDPE to alert MACS that you are working with paired end data, respectively.
+
+Please take note! BEDPE is NOT the same as bedtools format.  
+
+If you would like to mix .bed and .bam (can be compressed in .gz format) for inputs. You must select AUTO from the App Panel. 
+
+For instance in the case of comparisons, 
+
+Control = Mixture of .bed and .bam formatted files. 
+Chip = Mixture of .bed and .bam formatted files.
+
+or no comparisons.
+
+Chip = Mixture of .bed and .bam formatted files.
+
+(Tentatively removing this line).
+You can make choice of popular genomes depending on your projects species, q value, and extension size, if desired. 
+
 
 ## Output
 
