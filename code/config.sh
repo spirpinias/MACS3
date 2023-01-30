@@ -20,7 +20,7 @@ else
 fi
 
 if [ -z "${2}" ]; then
-    format="AUTO"
+    format="BAM"
 else
     format="${2}"
 fi
