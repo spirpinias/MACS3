@@ -17,14 +17,14 @@ MACS3 is a peak calling tool for ChIP seq data to identify transcript factor bin
 
 This capsule requests you name your alignment files in a specific format. 
 
-Please adhere to this example when processing multiple replicates or batches. 
+Please adhere to this example when naming your files. 
 
-sampleA_Rep1
-sampleA_Rep2
-sampleA_Rep3
-sampleA_Rep4
+sampleA_Rep1.bam
+sampleA_Rep2.bam
+sampleA_Rep3.bam
+sampleA_Rep4.bam
 
-We are assuming the final "_ " precedes a replicate marker ending with integer.
+We are assuming the final "_ " precedes a replicate marker ending with positive integer.
 
 ## Parameters 
 
