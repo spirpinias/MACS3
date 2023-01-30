@@ -1,17 +1,17 @@
 # MACS3  
 ##  Call Peaks
 
-MACS3 is a peak calling tool for ChIP seq data to identify transcript factor binding sites. This capsule only works with .bam inputs.
+MACS3 is a peak calling tool for ChIP seq data to identify transcript factor binding sites. This capsule works with .bam, .bed, .bed.gz, and .bam.gz inputs.
 
 ## Features
 
-- Searches your data folder for the alignment files in .bam format.
+- Searches your data folder for the files in aforementioned format.
 - Searches your data folder for a compare file in .csv format. 
-- Compare format must be control,case.
+- Compare format MUST like so - control,case.
 - Use file prefix to identify case and control samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
 - Each line in compare file will have paired case and control bams, i.e.,
-“hypoxia_test,hypoxia_control” 
-- If you do not provide a compare file, the tool assumes all provided .bam files are ChIP data.
+“hypoxia_control,hypoxia_test” 
+- If you do not provide a compare file, the tool assumes all provided files are ChIP data with no comparisons or controls.
 
 ## Naming Convention
 
