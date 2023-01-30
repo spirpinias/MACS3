@@ -11,7 +11,7 @@ MACS3 is a peak calling tool for ChIP seq data to identify transcript factor bin
 - Use file prefix to identify control and case samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
 - Each line in compare file will have paired control and case bams, i.e.,
 “hypoxia_control,hypoxia_test” 
-- If you do not provide a compare file, the tool assumes all provided files are ChIP data with no comparisons or controls.
+- If you do not provide a compare file, the tool assumes all provided files are ChIP data.
 
 
 ## Naming Convention
@@ -38,7 +38,6 @@ dm: 1.2e8
 
 - Q Value : The q-value (minimum FDR) cutoff to call significant regions. Default is 0.05. For broad marks, you can try 0.05 as the cutoff. Q-values are calculated from p-values using the Benjamini-Hochberg procedure.
 
-- Extension Size : While --nomodel is set, MACS uses this parameter to extend reads in 5'->3' direction to fix-sized fragments. For example, if the size of the binding region for your transcription factor is 200 bp, and you want to bypass the model building by MACS, this parameter can be set as 200. This option is only valid when --nomodel is set or when MACS fails to build model and --fix-bimodal is on.
 
 ## Usage
 
