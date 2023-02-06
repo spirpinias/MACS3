@@ -30,3 +30,9 @@ if [ -z "${3}" ]; then
 else
     q_val="${3}"
 fi
+
+if [ -z "${4}" ]; then
+    compare_sheet="compare_sheet"
+else
+    compare_sheet="${4}"
+fi

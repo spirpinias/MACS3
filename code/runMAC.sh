@@ -8,7 +8,7 @@ bam_count=$(find -L ../data -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" 
 bam_files=$(find -L ../data -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
 
 # Compare Sheet
-compare_sheet=$(find -L ../data -name "*compare_sheet.csv")
+compare_sheet=$(find -L ../data -name "*${compare_sheet}.csv")
 compare_sheet_count=$(echo $compare_sheet | wc -w)
 delim_compare_count=$(cat $compare_sheet | grep -c ",")
 
