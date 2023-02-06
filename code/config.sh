@@ -32,7 +32,7 @@ else
 fi
 
 if [ -z "${4}" ]; then
-    compare_sheet="compare_sheet"
+    compare_sheet=""
 else
     compare_sheet="${4}"
 fi
