@@ -26,8 +26,8 @@ then
         do
 
             # Get Control and Case 
-            control=$(echo $line | awk -F, '{print $1}')
-            case=$(echo $line | awk -F, '{print $2}')
+            control=$(echo $line | cut -d "," -f1)
+            case=$(echo $line | cut -d "," -f2)
 
             control_file=$(echo $bam_files | tr ' ' '\n' | grep -i ''${control}'')
             case_file=$(echo $bam_files | tr ' ' '\n' | grep -i ''${case}'')
