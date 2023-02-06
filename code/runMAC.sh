@@ -43,7 +43,14 @@ then
     else
         echo "Compare Sheet was Empty!"
     fi
+
+elif [ "$compare_sheet_count" -gt 1 ]; 
+then
+    echo "Only 1 Compare Sheet is Needed!"
+
+    
 else
+
     if [ "$bam_count" -gt 0 ];
     then
         echo "No Comparison File Found! Assuming only ChIP Seq"
