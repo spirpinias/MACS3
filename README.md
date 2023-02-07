@@ -9,10 +9,10 @@ Searches **data** folder .bam\*, or .bed\* files.
 
 This capsule requires alignment files in a specific format. For example:
 
-sampleA_Rep1.bam
-sampleA_Rep2.bam
-sampleA_Rep3.bam
-sampleA_Rep4.bam
+- sampleA_Rep1.bam
+- sampleA_Rep2.bam
+- sampleA_Rep3.bam
+- sampleA_Rep4.bam
 
 We are assuming the final "_ " precedes a replicate marker ending with positive integer.
 
