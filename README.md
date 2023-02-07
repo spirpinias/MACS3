@@ -1,24 +1,13 @@
-# MACS3  
-##  Call Peaks
+# MACS3 PeakCalling
 
 MACS3 is a peak calling tool for ChIP seq data to identify transcript factor binding sites. This capsule works with .bam, .bed, .bed.gz, and .bam.gz inputs.
 
-## Features
-
-- Searches your data folder for the files in aforementioned format.
-- Searches your data folder for a compare file in .csv format. 
-- Compare format MUST be like so - control,case.
-- Use file prefix to identify control and case samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
-- Each line in compare file will have paired control and case bams, i.e.,
-“hypoxia_control,hypoxia_test” 
-- If you do not provide a compare file, the tool assumes all provided files are ChIP data.
-
+## Input
+Searches **data** folder .bam\*, or .bed\* files.
 
 ## Naming Convention
 
-This capsule requests you name your alignment files in a specific format. 
-
-Please adhere to this example when naming your files. 
+This capsule requires alignment files in a specific format. For example:
 
 sampleA_Rep1.bam
 sampleA_Rep2.bam
@@ -29,15 +18,25 @@ We are assuming the final "_ " precedes a replicate marker ending with positive 
 
 ## Parameters 
 
-- Genome : It's the mappable genome size or effective genome size which is defined as the genome size which can be sequenced. Because of the repetitive features on the chromosomes, the actual mappable genome size will be smaller than the original size, about 90% or 70% of the genome size. The default hs -- 2.7e9 is recommended for human genome. Here are all precompiled parameters for effective genome size:
+* Genome : Mappable genome size or effective genome size. Defined as the genome size which can be sequenced. Because of the repetitive features, actual mappable genome size will be smaller than the original size, about 90% or 70% of the genome size. The default hs -- 2.7e9 is recommended for human genome. Here are all precompiled parameters for effective genome size:
 
 hs: 2.7e9
 mm: 1.87e9
 ce: 9e7
 dm: 1.2e8
 
-- Q Value : The q-value (minimum FDR) cutoff to call significant regions. Default is 0.05. For broad marks, you can try 0.05 as the cutoff. Q-values are calculated from p-values using the Benjamini-Hochberg procedure.
+* Format : Data format for the input files. "AUTO" will autodetect.
 
+* Q Value : The q-value (minimum FDR) cutoff to call significant regions. Default is 0.05. For broad marks, you can try 0.05 as the cutoff. Q-values are calculated from p-values using the Benjamini-Hochberg procedure.
+
+* Compare Sheet : Compare format MUST be like so - control,case.
+
+Use file prefix to identify control and case samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
+
+Each line in compare file will have paired control and case bams, i.e.,
+“hypoxia_control,hypoxia_test” 
+
+If you do not provide a compare file, the tool assumes all provided files are ChIP data.
 
 ## Usage
 
@@ -58,43 +57,15 @@ or no comparisons.
 
 Chip = Mixture of .bed and .bam formatted files.
 
-(Tentatively removing this line).
-You can make choice of popular genomes depending on your projects species and q value threshold, if desired. 
-
-
 ## Output
 
-In your results folder you will find a directory holding .narrowPeak, peaks.xls, .bed files, and R model (if no peaks are found this model will not be available. You will produce an error instructing you how to proceed) describing the peaks and locations found on your genome during analysis. 
+*  _peaks.narrowPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
 
-## Source
+* _peaks.xls : a tabular file which contains information about called peaks.
 
-https://github.com/macs3-project/MACS
+* _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
 
-## License
+* _model.r : an R script which you can use to produce a PDF image of the model based on your data. Load it to R by:
 
-MIT
+$ Rscript NAME_model.r
 
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
