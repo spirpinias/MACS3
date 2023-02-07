@@ -66,6 +66,5 @@ Chip = Mixture of .bed and .bam formatted files.
 * _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
 
 * _model.r : an R script which you can use to produce a PDF image of the model based on your data. Load it to R by:
-
-$ Rscript NAME_model.r
+    - $ Rscript NAME_model.r
 
