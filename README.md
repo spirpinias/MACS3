@@ -67,4 +67,5 @@ Chip = Mixture of .bed and .bam formatted files.
 
 * _model.r : an R script which you can use to produce a PDF image of the model based on your data. Load it to R by:
     - $ Rscript NAME_model.r
+    - If no peaks are found, the model will not be built and errors will instruct you how to correct it. 
 
