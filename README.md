@@ -3,7 +3,7 @@
 MACS3 is a peak calling tool for ChIP seq data to identify transcript factor binding sites. This capsule works with .bam, .bed, .bed.gz, and .bam.gz inputs.
 
 ## Input
-Searches **data** folder .bam\*, or .bed\* files.
+Searches **data** folder .bam\* or .bed\* files.
 
 ## Naming Convention
 
