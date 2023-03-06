@@ -1,3 +1,7 @@
+[![Code Ocean Logo](images/CO_logo_135x72.png)](http://codeocean.com/product)
+
+<hr>
+
 # MACS3 PeakCalling
 
 MACS3 is a peak calling tool for ChIP seq data to identify transcript factor binding sites. This capsule works with .bam, .bed, .bed.gz, and .bam.gz inputs.
@@ -69,3 +73,5 @@ Chip = Mixture of .bed and .bam formatted files.
     - $ Rscript NAME_model.r
     - If no peaks are found, the model will not be built and errors will instruct you how to correct it. 
 
+[Code Ocean](https://codeocean.com/) is a cloud-based computational platform that aims to make it easy for researchers to share, discover, and run code.<br /><br />
+[![Code Ocean Logo](images/CO_logo_68x36.png)](https://www.codeocean.com)

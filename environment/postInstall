@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-git clone https://github.com/zappuf/aux_tools.git
-cd aux_tools/
-git checkout 67a69fdbefacfea23b67caace6cd02b8029aa710
-chmod +x get_*
-ln -s $PWD/get_*.py /usr/local/bin
+# install code ocean aux tools
+mkdir -p /opt
+cd /opt
+git clone https://github.com/codeocean/co_aux_tools.git
+cd co_aux_tools/
+# git checkout #######  # uncomment and replace with commit hash to pin version
+chmod +x {g,s}et_*
+ln -s $PWD/{g,s}et_*.py /usr/local/bin
