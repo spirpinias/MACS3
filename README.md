@@ -73,5 +73,9 @@ Chip = Mixture of .bed and .bam formatted files.
     - $ Rscript NAME_model.r
     - If no peaks are found, the model will not be built and errors will instruct you how to correct it. 
 
+## Source
+
+https://github.com/macs3-project/MACS
+
 [Code Ocean](https://codeocean.com/) is a cloud-based computational platform that aims to make it easy for researchers to share, discover, and run code.<br /><br />
 [![Code Ocean Logo](images/CO_logo_68x36.png)](https://www.codeocean.com)
