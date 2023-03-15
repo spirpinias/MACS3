@@ -54,7 +54,7 @@ else
         do 
             echo "${line} is being Processed"
             no_control=$(echo $bam_files | tr ' ' '\n' | grep -i ''${line}'')
-            macs3 callpeak -t ${no_control} -f ${format} -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val}    
+            macs3 callpeak -t ${no_control} -f ${format} -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val} --nomodel
         done
     fi
 fi
