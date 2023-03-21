@@ -34,7 +34,7 @@ then
             -c ${control_file} \
             -f ${format} \
             -g ${genome} \
-            ${q_val} \
+            -q ${q_val} \
             -n "${control}vs${case}" \
             --outdir ../results/"${control}vs${case}" 
         done        

@@ -34,9 +34,9 @@ else
 fi
 
 if [ -z "${3}" ]; then
-    q_val=""
+    q_val="0.05"
 else
-    q_val="--qvalue ${3}"
+    q_val="${3}"
 fi
 
 if [ -z "${4}" ]; then
