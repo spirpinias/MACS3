@@ -33,7 +33,7 @@ then
             -t ${case_file} \
             -c ${control_file} \
             -f ${format} \
-            ${genome} \
+            -g ${genome} \
             ${q_val} \
             -n "${control}vs${case}" \
             --outdir ../results/"${control}vs${case}" 
