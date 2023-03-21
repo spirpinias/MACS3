@@ -21,7 +21,6 @@ delim_compare_count=$(cat $compare_sheet | grep -c ",")
 
 
 # MacS3 
-
 if [ -z "${1}" ]; then
     genome="hs"
 else

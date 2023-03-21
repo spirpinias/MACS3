@@ -29,7 +29,14 @@ then
             echo "Number of Control Files Found : ${control_count}"
             echo "Number of Case Files Found : ${case_count}" 
 
-            macs3 callpeak -t ${case_file} -c ${control_file} -f ${format} -g "${genome}" -n "${control}vs${case}" --outdir ../results/"${control}vs${case}" --qvalue ${q_val}        
+            macs3 callpeak \
+            -t ${case_file} \
+            -c ${control_file} \
+            -f ${format} \
+            -g "${genome}" \
+            -n "${control}vs${case}" \
+            --qvalue ${q_val} \
+            --outdir ../results/"${control}vs${case}" 
         done        
     else
         echo "Compare Sheet was Empty!"
@@ -45,7 +52,14 @@ else
         do 
             echo "${line} is being Processed"
             no_control=$(echo $bam_files | tr ' ' '\n' | grep -i ''${line}'')
-            macs3 callpeak -t ${no_control} -f ${format} -g "${genome}" -n "${line}" --outdir ../results/"${line}" --qvalue ${q_val} --nomodel
+            macs3 callpeak \
+            -t ${no_control} \
+            -f ${format} \
+            -g "${genome}" \
+            -n "${line}" \
+            --nomodel \
+            --qvalue ${q_val} \
+            --outdir ../results/"${line}"           
         done
     fi
 fi
