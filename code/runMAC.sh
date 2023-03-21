@@ -32,10 +32,10 @@ then
             macs3 callpeak \
             -t ${case_file} \
             -c ${control_file} \
-            -f ${format} \
-            -g "${genome}" \
+            ${format} \
+            ${genome} \
+            ${q_val} \
             -n "${control}vs${case}" \
-            --qvalue ${q_val} \
             --outdir ../results/"${control}vs${case}" 
         done        
     else

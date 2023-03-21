@@ -22,21 +22,21 @@ delim_compare_count=$(cat $compare_sheet | grep -c ",")
 
 # MacS3 
 if [ -z "${1}" ]; then
-    genome="hs"
+    genome=""
 else
-    genome="${1}"
+    genome="-g ${1}"
 fi
 
 if [ -z "${2}" ]; then
-    format="BAM"
+    format=""
 else
-    format="${2}"
+    format="-f ${2}"
 fi
 
 if [ -z "${3}" ]; then
-    q_val="0.05"
+    q_val=""
 else
-    q_val="${3}"
+    q_val="--qvalue ${3}"
 fi
 
 if [ -z "${4}" ]; then
