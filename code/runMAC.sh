@@ -3,15 +3,6 @@
 source ./config.sh
 source ./utils.sh
 
-# Search for the Alignment Files
-bam_files=$(find -L ../data -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
-bam_count=$(echo $bam_files | wc -w)
-
-# Compare Sheet
-compare_sheet=${compare_sheet}
-compare_sheet_count=$(echo $compare_sheet | wc -w)
-delim_compare_count=$(cat $compare_sheet | grep -c ",")
-
 if [ "$compare_sheet_count" -eq 1 ]; 
 then
 
