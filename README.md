@@ -25,8 +25,11 @@ We are assuming the final "_ " precedes a replicate marker ending with positive 
 * Genome : Mappable genome size or effective genome size. Defined as the genome size which can be sequenced. Because of the repetitive features, actual mappable genome size will be smaller than the original size, about 90% or 70% of the genome size. The default hs -- 2.7e9 is recommended for human genome. Here are all precompiled parameters for effective genome size:
 
 hs: 2.7e9
+
 mm: 1.87e9
+
 ce: 9e7
+
 dm: 1.2e8
 
 * Format : Data format for the input files. "AUTO" will autodetect.
