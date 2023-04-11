@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 source ./config.sh
 source ./utils.sh
 
@@ -7,7 +9,8 @@ if [ "$compare_sheet_count" -eq 1 ];
 then
 
     echo "Compare Sheet Found!"
-    
+    delim_compare_count=$(cat $compare_sheet | grep -c ",")
+
     if [ "$delim_compare_count" -gt 0 ] ;
     then
         
@@ -43,7 +46,6 @@ then
     fi
 
 else
-
     if [ "$bam_count" -gt 0 ];
     then
         echo "No Comparison File Found! Assuming only ChIP Seq"

@@ -4,7 +4,9 @@
 
 # MACS3 PeakCalling
 
-MACS3 is a peak calling tool for ChIP seq data to identify transcript factor binding sites. This capsule works with .bam, .bed, .bed.gz, and .bam.gz inputs.
+MACS3 is a peak calling tool for ChIP-Seq data to identify transcript factor binding sites. This capsule works with .bam, .bed, .bed.gz, and .bam.gz inputs.
+
+When supplied with alignment files and compare sheet, this tool will perform peak calling with comparisons. 
 
 ## Input
 Searches **data** folder .bam\* or .bed\* files.
@@ -20,49 +22,34 @@ This capsule requires alignment files in a specific format. For example:
 
 We are assuming the final "_ " precedes a replicate marker ending with positive integer.
 
-## Parameters 
+## App Panel Parameters 
 
-* Genome : Mappable genome size or effective genome size. Defined as the genome size which can be sequenced. Because of the repetitive features, actual mappable genome size will be smaller than the original size, about 90% or 70% of the genome size. The default hs -- 2.7e9 is recommended for human genome. Here are all precompiled parameters for effective genome size:
+Genome 
+- Mappable genome size or effective genome size. Defined as the genome size which can be sequenced. Because of the repetitive features, actual mappable genome size will be smaller than the original size, about 90% or 70% of the genome size. The default hs -- 2.7e9 is recommended for human genome. Here are all precompiled parameters for effective genome size:
 
-hs: 2.7e9
+    - hs: 2.7e9
 
-mm: 1.87e9
+    - mm: 1.87e9
 
-ce: 9e7
+    - ce: 9e7
 
-dm: 1.2e8
+    - dm: 1.2e8
 
-* Format : Data format for the input files. "AUTO" will autodetect.
+Format
+- Data format for the input files. "AUTO" will autodetect. 
+    - If your alignments are from PAIRED-END data you MUST select BAMPE or BEDPE to alert MACS that you are working with paired end data, respectively.
+    - You can mix .bed and .bam (can be compressed in .gz format) for inputs. You must select AUTO in order for this to work!
+    - Please take note! BEDPE is NOT the same as bedtools format.  
 
-* Q Value : The q-value (minimum FDR) cutoff to call significant regions. Default is 0.05. For broad marks, you can try 0.05 as the cutoff. Q-values are calculated from p-values using the Benjamini-Hochberg procedure.
 
-* Compare Sheet : Compare format MUST be like so - control,case.
+Q Value
+- The q-value (minimum FDR) cutoff to call significant regions. Default is 0.05. For broad marks, you can try 0.05 as the cutoff. Q-values are calculated from p-values using the Benjamini-Hochberg procedure.
 
-Use file prefix to identify control and case samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
-
-Each line in compare file will have paired control and case bams, i.e.,
-“hypoxia_control,hypoxia_test” 
-
-If you do not provide a compare file, the tool assumes all provided files are ChIP data.
-
-## Usage
-
-When supplied with alignment files and compare sheet. This tool will perform peak calling with comparisons. 
-
-If your alignments are from PAIRED-END data you MUST select BAMPE or BEDPE to alert MACS that you are working with paired end data, respectively.
-
-Please take note! BEDPE is NOT the same as bedtools format.  
-
-If you would like to mix .bed and .bam (can be compressed in .gz format) for inputs. You must select AUTO from the App Panel. 
-
-For instance in the case of comparisons, 
-
-Control = Mixture of .bed and .bam formatted files. 
-Chip = Mixture of .bed and .bam formatted files.
-
-or no comparisons.
-
-Chip = Mixture of .bed and .bam formatted files.
+Compare Sheet
+- Compare format MUST be like so - control,case. 
+    - Use file prefix to identify control and case samples. For example, hypoxia_test_rep1.bam would use file prefix hypoxia_test. 
+    - Each line in compare file will have paired control and case bams, i.e., “hypoxia_control,hypoxia_test” 
+    - If you do not provide a compare file, the tool assumes all provided files are ChIP data.
 
 ## Output
 

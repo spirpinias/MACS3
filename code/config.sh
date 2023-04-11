@@ -35,12 +35,9 @@ else
 fi
 
 if [ -z "${4}" ]; then
-    compare_sheet=""
+    compare_sheet=$(find -L ../data -name "compare_sheet.csv")
 else
     compare_sheet="${4}"
 fi
 
-# Compare Sheet
-compare_sheet=${compare_sheet}
 compare_sheet_count=$(echo $compare_sheet | wc -w)
-delim_compare_count=$(cat $compare_sheet | grep -c ",")
