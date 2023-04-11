@@ -5,9 +5,13 @@ description: |-
 
   https://github.com/macs3-project/MACS
 tags:
-- Bioinformatics
 - Peak Calling
 - ChIP
 - ATAC
+- Genomics
+- Oncology
+- Binding/Interactions
+- Structure
+- DNA
 authors:
 - name: Stephen Pirpinias
