@@ -58,11 +58,11 @@ else
             no_control=$(echo $bam_files | tr ' ' '\n' | grep -i ''${line}'')
             macs3 callpeak \
             -t ${no_control} \
-            -f ${format} \
-            -g "${genome}" \
+            ${format} \
+            "${genome}" \
             -n "${line}" \
-            --nomodel \
-            --qvalue ${q_val} \
+            ${no_model} \
+            ${q_val} \
             --outdir ../results/"${line}"           
         done
     fi
