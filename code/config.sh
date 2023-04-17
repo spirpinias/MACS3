@@ -23,9 +23,9 @@ else
 fi
 
 if [ -z "${2}" ]; then
-    format="BAM"
+    format=""
 else
-    format="${2}"
+    format="-f ${2}"
 fi
 
 if [ -z "${3}" ]; then
