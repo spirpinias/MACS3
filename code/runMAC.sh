@@ -37,7 +37,7 @@ then
             -c ${control_file} \
             -f ${format} \
             -g ${genome} \
-            -q ${q_val} \
+            ${q_val} \
             ${no_model} \
             ${ext_size} \
             -n "${control}vs${case}" \
