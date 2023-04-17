@@ -40,4 +40,17 @@ else
     compare_sheet="${4}"
 fi
 
+if [ "${5}" = 'True' ]; then
+    no_model="--nomodel"
+else
+    no_model=""
+fi
+
+if [ "${6}" = 'True' ]; then
+    ext_size=""
+else
+    ext_size="--extsize ${6}"
+fi
+
+
 compare_sheet_count=$(echo $compare_sheet | wc -w)

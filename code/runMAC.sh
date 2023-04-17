@@ -38,6 +38,8 @@ then
             -f ${format} \
             -g ${genome} \
             -q ${q_val} \
+            ${no_model} \
+            ${ext_size} \
             -n "${control}vs${case}" \
             --outdir ../results/"${control}vs${case}" 
         done        
