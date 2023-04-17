@@ -59,10 +59,11 @@ else
             macs3 callpeak \
             -t ${no_control} \
             ${format} \
-            "${genome}" \
-            -n "${line}" \
+            ${genome} \
             ${no_model} \
             ${q_val} \
+            ${ext_size} \
+            -n "${line}" \
             --outdir ../results/"${line}"           
         done
     fi
