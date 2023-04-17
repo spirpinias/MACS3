@@ -35,7 +35,7 @@ then
             macs3 callpeak \
             -t ${case_file} \
             -c ${control_file} \
-            -f ${format} \
+            ${format} \
             -g ${genome} \
             ${q_val} \
             ${no_model} \
