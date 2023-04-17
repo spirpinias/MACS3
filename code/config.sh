@@ -46,7 +46,7 @@ else
     no_model=""
 fi
 
-if [ "${6}" = 'True' ]; then
+if [ -z "${6}" ]; then
     ext_size=""
 else
     ext_size="--extsize ${6}"
