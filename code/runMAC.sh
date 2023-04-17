@@ -60,8 +60,8 @@ else
             -t ${no_control} \
             ${format} \
             ${genome} \
-            ${no_model} \
             ${q_val} \
+            ${no_model} \
             ${ext_size} \
             -n "${line}" \
             --outdir ../results/"${line}"           
