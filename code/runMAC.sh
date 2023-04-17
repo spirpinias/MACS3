@@ -36,7 +36,7 @@ then
             -t ${case_file} \
             -c ${control_file} \
             ${format} \
-            -g ${genome} \
+            ${genome} \
             ${q_val} \
             ${no_model} \
             ${ext_size} \

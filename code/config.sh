@@ -17,9 +17,9 @@ bam_count=$(echo $bam_files | wc -w)
 
 # MacS3 
 if [ -z "${1}" ]; then
-    genome="hs"
+    genome=""
 else
-    genome="${1}"
+    genome="-g ${1}"
 fi
 
 if [ -z "${2}" ]; then
