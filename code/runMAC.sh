@@ -36,8 +36,8 @@ then
             macs3 callpeak \
             -t ${case_file} \
             -c ${control_file} \
+            -g ${genome} \
             ${format} \
-            ${genome} \
             ${q_val} \
             ${no_model} \
             ${ext_size} \
@@ -87,8 +87,8 @@ else
             no_control=$(echo $bam_files | tr ' ' '\n' | grep -i ''${line}'')
             macs3 callpeak \
             -t ${no_control} \
+            -g ${genome} \
             ${format} \
-            ${genome} \
             ${q_val} \
             ${no_model} \
             ${ext_size} \
