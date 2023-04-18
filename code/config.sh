@@ -170,4 +170,5 @@ if [ -z "${26}" ]; then
 else
     filter_peaks_low="--fe-cutoff ${26}"
 fi
+
 compare_sheet_count=$(echo $compare_sheet | wc -w)
