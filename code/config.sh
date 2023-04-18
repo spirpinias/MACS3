@@ -74,4 +74,48 @@ if [ -z "${10}" ]; then
 else
     shift_reads="--shift ${10}"
 fi
+
+if [ -z "${11}" ]; then
+    band_width=""
+else
+    band_width="--bw ${11}"
+fi
+
+if [ -z "${12}" ]; then
+    minimum_fragment_size=""
+else
+    minimum_fragment_size="--d-min ${12}"
+fi
+
+if [ "${13}" = 'True' ]; then
+    fix_bimodel="--SPMR"
+else
+    fix_bimodel=""
+fi
+
+if [ -z "${14}" ]; then
+    p_value=""
+else
+    p_value="-p ${14}"
+fi
+
+if [ "${15}" = 'small' ]; then
+    scaling="--scale-to ${15}"
+else
+    scaling=""
+fi
+
+if [ "${16}" = 'True' ]; then
+    down_sample="--down-sample"
+else
+    down_sample=""
+fi
+
+if [ "${17}" = 'True' ]; then
+    lambda="--nolambda"
+else
+    lambda=""
+fi
+
+
 compare_sheet_count=$(echo $compare_sheet | wc -w)

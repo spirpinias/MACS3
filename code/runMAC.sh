@@ -44,6 +44,14 @@ then
             ${tag_size} \
             ${track_line} \
             ${save_signal} \
+            ${shift_reads} \
+            ${band_width} \
+            ${minimum_fragment_size} \
+            ${fix_bimodel} \
+            ${p_value} \
+            ${scaling} \
+            ${down_sample} \
+            ${lambda} \
             
             -n "${control}vs${case}" \
             --outdir ../results/"${control}vs${case}" 
