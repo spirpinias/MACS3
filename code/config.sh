@@ -35,7 +35,7 @@ else
 fi
 
 if [ -z "${4}" ]; then
-    compare_sheet=$(find -L ../data -name "compare_sheet.csv")
+    compare_sheet=""
 else
     compare_sheet="${4}"
 fi
