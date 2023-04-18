@@ -15,6 +15,7 @@ then
     then
         
         echo "Compare Sheet Contains Comparisons!"
+        echo "Number of Comparisons : $delim_compare_count" 
 
         for line in $(cat ${compare_sheet}); 
         do
