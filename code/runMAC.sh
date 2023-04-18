@@ -48,6 +48,7 @@ then
     fi
 
 else
+
     if [ "$bam_count" -gt 0 ];
     then
     
