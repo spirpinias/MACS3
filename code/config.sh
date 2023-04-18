@@ -14,7 +14,6 @@ fi
 bam_files=$(find -L ../data -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
 bam_count=$(echo $bam_files | wc -w)
 
-
 # MacS3 
 if [ -z "${1}" ]; then
     genome=""
