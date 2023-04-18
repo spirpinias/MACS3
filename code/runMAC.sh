@@ -41,6 +41,10 @@ then
             ${q_val} \
             ${no_model} \
             ${ext_size} \
+            ${tag_size} \
+            ${track_line} \
+            ${save_signal} \
+            
             -n "${control}vs${case}" \
             --outdir ../results/"${control}vs${case}" 
         done        

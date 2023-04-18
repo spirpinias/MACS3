@@ -51,5 +51,21 @@ else
     ext_size="--extsize ${6}"
 fi
 
+if [ -z "${7}" ]; then
+    tag_size=""
+else
+    tag_size="-s ${7}"
+fi
 
+if [ "${8}" = 'True' ]; then
+    track_line="--trackline"
+else
+    track_line=""
+fi
+
+if [ "${9}" = 'True' ]; then
+    save_signal="--SPMR"
+else
+    save_signal=""
+fi
 compare_sheet_count=$(echo $compare_sheet | wc -w)
