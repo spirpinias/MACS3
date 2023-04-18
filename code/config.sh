@@ -117,5 +117,57 @@ else
     lambda=""
 fi
 
+if [ -z "${18}" ]; then
+    small_local=""
+else
+    small_local="--slocal ${18}"
+fi
 
+if [ -z "${19}" ]; then
+    large_local=""
+else
+    large_local="--llocal ${19}"
+fi
+
+if [ -z "${20}" ]; then
+    max_gap_cluster=""
+else
+    max_gap_cluster="--max-gap ${20}"
+fi
+
+if [ -z "${21}" ]; then
+    min_peak_length=""
+else
+    min_peak_length="--min-length ${21}"
+fi
+
+if [ "${22}" = 'True' ]; then
+    call_broad="--broad"
+else
+    call_broad=""
+fi
+
+if [ -z "${23}" ]; then
+    broad_cutoff=""
+else
+    broad_cutoff="--broad-cutoff ${23}"
+fi
+
+if [ "${23}" = 'True' ]; then
+    cut_off_analysis="--cutoff-analysis"
+else
+    cut_off_analysis=""
+fi
+
+if [ "${25}" = 'True' ]; then
+    call_summits="--call-summits"
+else
+    call_summits=""
+fi
+
+if [ -z "${26}" ]; then
+    filter_peaks_low=""
+else
+    filter_peaks_low="--fe-cutoff ${26}"
+fi
 compare_sheet_count=$(echo $compare_sheet | wc -w)
