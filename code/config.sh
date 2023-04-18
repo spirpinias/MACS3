@@ -68,4 +68,10 @@ if [ "${9}" = 'True' ]; then
 else
     save_signal=""
 fi
+
+if [ -z "${10}" ]; then
+    shift_reads=""
+else
+    shift_reads="--shift ${10}"
+fi
 compare_sheet_count=$(echo $compare_sheet | wc -w)
