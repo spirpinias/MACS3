@@ -18,7 +18,7 @@ bam_count=$(echo $bam_files | wc -w)
 if [ -z "${1}" ]; then
     genome=""
 else
-    genome="-g ${1}"
+    genome="${1}"
 fi
 
 if [ -z "${2}" ]; then
