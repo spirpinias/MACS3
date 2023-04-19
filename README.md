@@ -101,7 +101,22 @@ Maximum Gap Between Clusters
 -   Maximum gap between significant sites to cluster them together. 
 
 Minimum Length of Peak
--   
+-   Minimum length of a peak.
+
+Call Broad Peak
+-   If set, MACS will try to call broad peaks using the --broad-cutoff setting. Please tweak '--broad-cutoff' setting to control the peak calling behavior. At the meantime, either -q or -p cutoff will be used to define regions with 'stronger enrichment' inside of broad peaks. 
+
+Broad Cut Off  
+-   Cutoff for broad region. This option is not available unless --broad is set. If -p is set, this is a pvalue cutoff, otherwise, it's a qvalue cutoff. Please note that in broad peakcalling mode, MACS3 uses this setting to control the overall peak calling behavior, then uses -q or -p setting to define regions inside broad region as 'stronger' enrichment.
+
+Cut Off Analysis 
+-   While set, MACS3 will analyze number or total length of peaks that can be called by different p-value cutoff then output a summary table to help user decide a better cutoff. 
+
+Call Summits
+-   If set, MACS will use a more sophisticated signal processing approach to find subpeak summits in each enriched peak region. 
+
+Filter Peaks with Low-Fold
+-  When set, the value will be used as the minimum requirement to filter out peaks with low fold-enrichment. 
 
 ## Output
 
