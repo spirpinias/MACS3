@@ -1,5 +1,5 @@
 metadata_version: 1
-name: MACS-CallPeaks
+name: MACS PeakCalling
 description: |-
   MACS3 is a peak calling tool generally used on ChIP seq data to identify transcript factor binding sites. MACS3 can be used on ChIP seq data with or without controls.
 

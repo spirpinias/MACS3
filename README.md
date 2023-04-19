@@ -51,6 +51,34 @@ Compare Sheet
     - Each line in compare file will have paired control and case bams, i.e., “hypoxia_control,hypoxia_test” 
     - If you do not provide a compare file, the tool assumes all provided files are ChIP data.
 
+Include Model
+-   Wether or not to build the shifting model.
+    - If you have less than 100 peaks this parameter is needed to process your sequencing files.
+
+Extension Size
+-   The arbitrary extension size in bp. When Include Model is true, MACS will use this value as fragment size to extend each read towards 3' end, then pile them up.
+
+Tag Size
+-   Tag size/read length. This will override the auto detected tag size. 
+
+Including Trackline
+-   Tells MACS to include trackline with bedGraph files. To include this trackline while displaying bedGraph at UCSC genome browser, can show name and description of the file as well. 
+
+Saving Signal per Million Reads
+-   If True, MACS will SAVE signal per million reads for fragment pileup profiles. It won't interfere with computing pvalue/qvalue during peak calling, since internally MACS3 keeps using the raw pileup and scaling factors between larger and smaller dataset to calculate statistics measurements. If you plan to use the signal output in bedGraph to call peaks using bdgcmp and bdgpeakcall, you shouldn't use this option because you will end up with different results. However, this option is recommended for displaying normalized pileup tracks across many datasets.
+
+Shift Reads
+-   The arbitrary shift in bp. Use discretion while setting it other than default value. When NOMODEL is set, MACS will use this value to move cutting ends (5') towards 5'->3' direction then apply EXTSIZE to extend them to fragments. When this value is negative, ends will be moved toward 3'->5' direction. 
+
+Band Width
+-   Band width for picking regions to compute fragment size. This value is only used while building the shifting model.
+
+Minimum Fragment Size in Basepair
+-   Minimum fragment size in basepair. Any predicted fragment size less than this will be excluded.
+
+Fix Bimodal 
+-   
+
 ## Output
 
 *  _peaks.narrowPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 

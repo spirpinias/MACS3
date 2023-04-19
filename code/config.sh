@@ -88,7 +88,7 @@ else
 fi
 
 if [ "${13}" = 'True' ]; then
-    fix_bimodel="--SPMR"
+    fix_bimodel="--fix-bimodal"
 else
     fix_bimodel=""
 fi
