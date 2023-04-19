@@ -94,6 +94,14 @@ Lambda
 Small Local
 -   The small nearby region in basepairs to calculate dynamic lambda. This is used to capture the bias near the peak summit region.
 
+Large Local
+-   The large nearby region in basepairs to calculate dynamic lambda. This is used to capture the surround bias.
+
+Maximum Gap Between Clusters
+-   Maximum gap between significant sites to cluster them together. 
+
+Minimum Length of Peak
+-   
 
 ## Output
 
