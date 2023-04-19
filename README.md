@@ -77,7 +77,20 @@ Minimum Fragment Size in Basepair
 -   Minimum fragment size in basepair. Any predicted fragment size less than this will be excluded.
 
 Fix Bimodal 
--   
+-   Whether turn on the auto pair model process. If set, when MACS failed to build paired model, it will use the nomodel settings, the --exsize parameter to extend each tags towards 3' direction.
+
+P Value
+-  Pvalue cutoff for peak detection.
+
+Scaling 
+-  When set to 'small', scale the larger sample up to the smaller sample. When set to 'larger', scale the smaller sample up to the bigger sample.
+
+Down Sample
+-   When set, random sampling method will scale down the bigger sample. By default, MACS uses linear scaling.
+
+Lambda 
+-   If True, MACS will use fixed background lambda as local lambda for every peak region. Normally, MACS calculates a dynamic local lambda to reflect the local bias due to the potential chromatin accessibility.
+
 
 ## Output
 
