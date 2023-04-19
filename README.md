@@ -91,6 +91,9 @@ Down Sample
 Lambda 
 -   If True, MACS will use fixed background lambda as local lambda for every peak region. Normally, MACS calculates a dynamic local lambda to reflect the local bias due to the potential chromatin accessibility.
 
+Small Local
+-   The small nearby region in basepairs to calculate dynamic lambda. This is used to capture the bias near the peak summit region.
+
 
 ## Output
 
