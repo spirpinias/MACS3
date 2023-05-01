@@ -44,7 +44,7 @@ Format
 - Data format for the input files. "AUTO" will autodetect. 
     - If your alignments are from PAIRED-END data you MUST select BAMPE or BEDPE to alert MACS that you are working with paired end data, respectively.
     - You can mix .bed and .bam (can be compressed in .gz format) for inputs. You must select AUTO in order for this to work!
-    - Please take note! BEDPE is NOT the same as bedtools format.  
+    - Please take note! BEDPE is **NOT** the same as bedtools format.  
 
 
 Q Value
