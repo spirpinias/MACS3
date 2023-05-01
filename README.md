@@ -41,7 +41,7 @@ Genome
     - dm: 1.2e8
 
 Format
-- Data format for the input files. "AUTO" will autodetect. 
+- Data format for the input files.  
     - If your alignments are from PAIRED-END data you **MUST** select BAMPE or BEDPE to alert MACS that you are working with paired end data, respectively.
     - You can mix .bed and .bam (can be compressed in .gz format) for inputs. You must select AUTO in order for this to work!
     - Please take note! BEDPE is **NOT** the same as bedtools format.  
