@@ -9,18 +9,23 @@ MACS3 is a peak calling tool for ChIP-Seq data to identify transcript factor bin
 When supplied with alignment files and compare sheet, this tool will perform peak calling with comparisons. 
 
 ## Input
-Searches **data** folder .bam\* or .bed\* files.
 
-## Naming Convention
+**Alignment/peak annotation files**
 
-This capsule requires alignment files in a specific format. For example:
+In **data** folder either \*.bam files containing alignments or or \*.bed files containing peak annotations. These can can optionally be paired tumor/control with control sample establishing background peaks. 
+
+If no compare sheet is provided, this capsule assumes the final "_ " precedes a replicate marker.
+
+For example:
 
 - sampleA_Rep1.bam
 - sampleA_Rep2.bam
 - sampleA_Rep3.bam
 - sampleA_Rep4.bam
 
-We are assuming the final "_ " precedes a replicate marker ending with positive integer.
+**Compare Sheet**
+
+Optional .csv formatted file containing tumor/normal information. The first column provides the sample prefix for the control condition, the second column provides the sample prefix for the case condition. No header is necessary. If not specified, this is assumed to be 
 
 ## App Panel Parameters 
 
