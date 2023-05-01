@@ -42,7 +42,7 @@ Genome
 
 Format
 - Data format for the input files.  
-    - If your alignments are from **PAIRED-END** data you **MUST** select **BAMPE** or **BEDPE** (please use MACS randsample to convert your BAM into BAMPE) to alert MACS that you are working with paired end data, respectively.
+    - If your alignments are from **PAIRED-END** data you **MUST** select **BAMPE** or **BEDPE** (please use MACS randsample to convert your BAM into BAMPE, if you want this format) to alert MACS that you are working with paired end data, respectively.
     - You can mix .BED and .BAM (can be compressed in .gz format) for inputs. You must select **AUTO** in order for this to work!
     - Please take note! BEDPE is **NOT** the same as bedtools format.  
 
