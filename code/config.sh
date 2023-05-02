@@ -43,10 +43,10 @@ if [ "${4}" = "True" ]; then
     then
         delim_compare_count=$(cat $compare_sheet | grep -c ",")
     else
-        compare_sheet_count=0
         echo "Only 1 Compare Sheet Allowed!"
     fi
 else
+    compare_sheet_count=0
     compare_sheet=""
 fi
 
