@@ -19,7 +19,6 @@ bam_count=$(echo $bam_files | wc -w)
 compare_sheet=$(find -L ../data/Compare -name "*.csv")
 compare_sheet_count=$(echo $compare_sheet | wc -w)
 
-
 # MacS3 
 if [ -z "${1}" ]; then
     genome=""
