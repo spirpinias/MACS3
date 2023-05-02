@@ -11,7 +11,7 @@ else
 fi
 
 # Search for the Alignment Files
-bam_files=$(find -L ../data -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
+bam_files=$(find -L ../data/PeakCalling -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
 bam_count=$(echo $bam_files | wc -w)
 
 # MacS3 
