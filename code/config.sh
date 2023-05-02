@@ -14,6 +14,12 @@ fi
 bam_files=$(find -L ../data/PeakCalling -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
 bam_count=$(echo $bam_files | wc -w)
 
+
+# Compare Sheet
+compare_sheet=$(find -L ../data/Compare -name "*.csv")
+compare_sheet_count=$(echo $compare_sheet | wc -w)
+
+
 # MacS3 
 if [ -z "${1}" ]; then
     genome=""
@@ -33,10 +39,15 @@ else
     q_val="-q ${3}"
 fi
 
-if [ -z "${4}" ]; then
-    compare_sheet=""
+if [ "${4}" = "True" ]; then
+    if [ "$compare_sheet_count" -eq 1 ];
+    then
+        delim_compare_count=$(cat $compare_sheet | grep -c ",")
+    else
+        echo "Only 1 Compare Sheet Allowed!"
+    fi
 else
-    compare_sheet="${4}"
+    compare_sheet=""
 fi
 
 if [ "${5}" = 'True' ]; then
@@ -170,5 +181,3 @@ if [ -z "${26}" ]; then
 else
     filter_peaks_low="--fe-cutoff ${26}"
 fi
-
-compare_sheet_count=$(echo $compare_sheet | wc -w)
