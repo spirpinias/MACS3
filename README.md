@@ -144,6 +144,8 @@ When Broad Peaks is On,
 
     *  _peaks.broadPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
 
+    *  _peaks.broadPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value.
+
     * _peaks.xls : a tabular file which contains information about called peaks.
 
     * _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
