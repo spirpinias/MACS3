@@ -4,7 +4,7 @@ set -ex
 
 source ./config.sh
 source ./utils.sh
-source ./loopMach.sh
+source ./loopMAC.sh
 
 if [ "$compare_sheet_count" -eq 1 ]; 
 then
