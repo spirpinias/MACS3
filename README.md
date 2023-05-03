@@ -146,15 +146,11 @@ When Broad Peaks is On,
         - $ Rscript NAME_model.r
         - If no peaks are found, the model will not be built and errors will instruct you how to correct it.
 
-    *  _peaks.broadPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
+    *  _peaks.broadPeak : BED6+3 format which is similar to narrowPeak file, except for missing the 10th column for annotating peak summits. This file and the gappedPeak file will only be available when --broad is enabled. Since in the broad peak calling mode, the peak summit won't be called, the values in the 5th, and 7-9th columns are the mean value across all positions in the peak region. Refer to narrowPeak if you want to fix the value issue in the 5th column. 
 
-    *  _peaks.gappedPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value.
+    *  _peaks.gappedPeak : BED12+3 format which contains both the broad region and narrow peaks. The 5th column is the score for showing grey levels on the UCSC browser as in narrowPeak. The 7th is the start of the first narrow peak in the region, and the 8th column is the end. The 9th column should be RGB color key, however, we keep 0 here to use the default color, so change it if you want. The 10th column tells how many blocks including the starting 1bp and ending 1bp of broad regions. The 11th column shows the length of each block and 12th for the start of each block. 13th: fold-change, 14th: -log10pvalue, 15th: -log10qvalue. The file can be loaded directly to the UCSC genome browser. Refer to narrowPeak if you want to fix the value issue in the 5th column.
 
     * _peaks.xls : a tabular file which contains information about called peaks.
-
-    * _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
-
-
 
 
 ## Source
