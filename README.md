@@ -142,7 +142,7 @@ When Broad Peaks is Off,
 
 When Broad Peaks is On,
 
-    *  _peaks.narrowPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
+    *  _peaks.broadPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
 
     * _peaks.xls : a tabular file which contains information about called peaks.
 
