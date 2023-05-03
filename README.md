@@ -142,9 +142,13 @@ When Broad Peaks is Off,
 
 When Broad Peaks is On,
 
+    * _model.r : an R script which you can use to produce a PDF image of the model based on your data. Load it to R by:
+        - $ Rscript NAME_model.r
+        - If no peaks are found, the model will not be built and errors will instruct you how to correct it.
+
     *  _peaks.broadPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
 
-    *  _peaks.broadPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value.
+    *  _peaks.gappedPeaks : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value.
 
     * _peaks.xls : a tabular file which contains information about called peaks.
 
