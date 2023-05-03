@@ -135,7 +135,7 @@ Filter Peaks with Low-Fold
     - $ Rscript NAME_model.r
     - If no peaks are found, the model will not be built and errors will instruct you how to correct it. 
 
-** The narrowPeak file contains the entire interval of the peak, the ff_summits.bed the peak summits so the base with the highest read pipeup.**
+*The narrowPeak file contains the entire interval of the peak, the ff_summits.bed the peak summits so the base with the highest read pipeup.*
 
 
 ## Source
