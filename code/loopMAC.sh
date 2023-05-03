@@ -53,5 +53,4 @@ fi
   ${call_summits} \
   ${filter_peaks_low} \
   ${naming}
-
 }
