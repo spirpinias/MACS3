@@ -125,17 +125,30 @@ Filter Peaks with Low-Fold
 
 ## Output
 
-*  _peaks.narrowPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
+When Broad Peaks is Off,
 
-* _peaks.xls : a tabular file which contains information about called peaks.
 
-* _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
+    *  _peaks.narrowPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
 
-* _model.r : an R script which you can use to produce a PDF image of the model based on your data. Load it to R by:
-    - $ Rscript NAME_model.r
-    - If no peaks are found, the model will not be built and errors will instruct you how to correct it. 
+    * _peaks.xls : a tabular file which contains information about called peaks.
 
-*The narrowPeak file contains the entire interval of the peak, the _summits.bed the peak summits so the base with the highest read pipeup.*
+    * _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
+
+    * _model.r : an R script which you can use to produce a PDF image of the model based on your data. Load it to R by:
+        - $ Rscript NAME_model.r
+        - If no peaks are found, the model will not be built and errors will instruct you how to correct it. 
+
+    *The narrowPeak file contains the entire interval of the peak, the _summits.bed the peak summits so the base with the highest read pipeup.*
+
+When Broad Peaks is On,
+
+    *  _peaks.narrowPeak : BED6+4 format file which contains the peak locations together with peak summit, p-value, and q-value. 
+
+    * _peaks.xls : a tabular file which contains information about called peaks.
+
+    * _summits.bed : BED format, which contains the peak summits locations for every peak. The 5th column in this file is the same as what is in the narrowPeak file. If you want to find the motifs at the binding sites, this file is recommended.
+
+
 
 
 ## Source
