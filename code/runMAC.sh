@@ -4,6 +4,7 @@ set -ex
 
 source ./config.sh
 source ./utils.sh
+source ./loopMach.sh
 
 if [ "$compare_sheet_count" -eq 1 ]; 
 then
@@ -33,36 +34,8 @@ then
             echo "Number of Control Files Found : ${control_count}"
             echo "Number of Case Files Found : ${case_count}" 
 
-            macs3 callpeak \
-            -t ${case_file} \
-            -c ${control_file} \
-            -g ${genome} \
-            ${format} \
-            ${q_val} \
-            ${no_model} \
-            ${ext_size} \
-            ${tag_size} \
-            ${track_line} \
-            ${save_signal} \
-            ${shift_reads} \
-            ${band_width} \
-            ${minimum_fragment_size} \
-            ${fix_bimodel} \
-            ${p_value} \
-            ${scaling} \
-            ${down_sample} \
-            ${lambda} \
-            ${small_local} \
-            ${large_local} \
-            ${max_gap_cluster} \
-            ${min_peak_length} \
-            ${call_broad} \
-            ${broad_cutoff} \
-            ${cut_off_analysis} \
-            ${call_summits} \
-            ${filter_peaks_low} \
-            -n "${control}vs${case}" \
-            --outdir ../results/"${control}vs${case}" 
+            LoopMAC "${case_file}" "${control_file}" ${control}vs${case}
+ 
         done        
     else
         echo "Compare Sheet was Empty!"
@@ -85,33 +58,9 @@ else
 
             echo "${line} is being Processed"
             no_control=$(echo $bam_files | tr ' ' '\n' | grep -i ''${line}'')
-            macs3 callpeak \
-            -t ${no_control} \
-            -g ${genome} \
-            ${format} \
-            ${q_val} \
-            ${no_model} \
-            ${ext_size} \
-            ${tag_size} \
-            ${track_line} \
-            ${save_signal} \
-            ${shift_reads} \
-            ${band_width} \
-            ${minimum_fragment_size} \
-            ${fix_bimodel} \
-            ${p_value} \
-            ${scaling} \
-            ${down_sample} \
-            ${lambda} \
-            ${max_gap_cluster} \
-            ${min_peak_length} \
-            ${call_broad} \
-            ${broad_cutoff} \
-            ${cut_off_analysis} \
-            ${call_summits} \
-            ${filter_peaks_low} \
-            -n "${line}" \
-            --outdir ../results/"${line}"           
+
+            LoopMAC "${no_control}" '' ${line}
+          
         done
     fi
 fi
