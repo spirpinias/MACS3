@@ -180,3 +180,9 @@ if [ -z "${26}" ]; then
 else
     filter_peaks_low="--fe-cutoff ${26}"
 fi
+
+if [ "${27}" = 'True' ]; then
+    save_pileup="-B"
+else
+    save_pileup=""
+fi

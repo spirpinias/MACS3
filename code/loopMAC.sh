@@ -52,5 +52,6 @@ fi
   ${cut_off_analysis} \
   ${call_summits} \
   ${filter_peaks_low} \
+  ${save_pileup} \
   ${naming}
 }
