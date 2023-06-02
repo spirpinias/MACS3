@@ -14,9 +14,6 @@ fi
 bam_files=$(find -L ../data/PeakCalling -name "*.bed*" -o -name "*.bam" -o -name "*.bam.gz" -o -name "*.bed.gz")
 bam_count=$(echo $bam_files | wc -w)
 
-# Compare Sheet
-compare_sheet=$(find -L ../data/Compare -name "*.csv")
-compare_sheet_count=$(echo $compare_sheet | wc -w)
 
 # MacS3 
 if [ -z "${1}" ]; then
@@ -38,6 +35,10 @@ else
 fi
 
 if [ "${4}" = "True" ]; then
+    # Compare Sheet
+    compare_sheet=$(find -L ../data/Compare -name "*.csv")
+    compare_sheet_count=$(echo $compare_sheet | wc -w)
+    
     if [ "$compare_sheet_count" -eq 1 ];
     then
         delim_compare_count=$(cat $compare_sheet | grep -c ",")
@@ -46,7 +47,6 @@ if [ "${4}" = "True" ]; then
     fi
 else
     compare_sheet_count=0
-    compare_sheet=""
 fi
 
 if [ "${5}" = 'True' ]; then
