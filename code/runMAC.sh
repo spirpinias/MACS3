@@ -46,7 +46,7 @@ else
     if [ "$bam_count" -gt 0 ];
     then
     
-        echo "No Comparison File Found! Assuming only ChIP Seq"
+        echo "No Comparison File Found! Proceeding with Case Only"
 
         condGroup=$(echo $bam_files| xargs basename -a | sed 's/_[^_]*$//g' | sort | uniq)
         condGroup_count=$(echo $condGroup | wc -w)
